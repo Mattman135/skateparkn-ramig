@@ -1,40 +1,32 @@
-"use client";
+"use client"
 
-import { useState, useEffect } from "react";
-import { useSearchParams } from "next/navigation";
-import Link from "next/link";
-import Image from "next/image";
-import ButtonSignin from "./ButtonSignin";
-import logo from "@/app/icon.png";
-import config from "@/config";
+import { useState, useEffect } from "react"
+import { useSearchParams } from "next/navigation"
+import Link from "next/link"
+import Image from "next/image"
+import ButtonSignin from "./ButtonSignin"
+import logo from "@/app/icon.png"
+import config from "@/config"
 
 const links = [
-  {
-    href: "/#pricing",
-    label: "Pricing",
-  },
-  {
-    href: "/#testimonials",
-    label: "Reviews",
-  },
   {
     href: "/#faq",
     label: "FAQ",
   },
-];
+]
 
-const cta = <ButtonSignin extraStyle="btn-primary" />;
+const cta = <ButtonSignin extraStyle="btn-primary" />
 
 // A header with a logo on the left, links in the center (like Pricing, etc...), and a CTA (like Get Started or Login) on the right.
 // The header is responsive, and on mobile, the links are hidden behind a burger button.
 const Header = () => {
-  const searchParams = useSearchParams();
-  const [isOpen, setIsOpen] = useState(false);
+  const searchParams = useSearchParams()
+  const [isOpen, setIsOpen] = useState(false)
 
   // setIsOpen(false) when the route changes (i.e: when the user clicks on a link on mobile)
   useEffect(() => {
-    setIsOpen(false);
-  }, [searchParams]);
+    setIsOpen(false)
+  }, [searchParams])
 
   return (
     <header className="bg-base-200">
@@ -49,41 +41,31 @@ const Header = () => {
             href="/"
             title={`${config.appName} hompage`}
           >
-            <Image
-              src={logo}
-              alt={`${config.appName} logo`}
-              className="w-8"
-              placeholder="blur"
-              priority={true}
-              width={32}
-              height={32}
-            />
-            <span className="font-extrabold text-lg">{config.appName}</span>
-          </Link>
-        </div>
-        {/* Burger button to open menu on mobile */}
-        <div className="flex lg:hidden">
-          <button
-            type="button"
-            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5"
-            onClick={() => setIsOpen(true)}
-          >
-            <span className="sr-only">Open main menu</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
               strokeWidth={1.5}
               stroke="currentColor"
-              className="w-6 h-6 text-base-content"
+              className="size-15"
             >
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+              />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
               />
             </svg>
-          </button>
+
+            <span className="font-extrabold text-lg">
+              Hundrastgårdar
+              <br /> i Sverige
+            </span>
+          </Link>
         </div>
 
         {/* Your links on large screens */}
@@ -99,9 +81,6 @@ const Header = () => {
             </Link>
           ))}
         </div>
-
-        {/* CTA on large screens */}
-        <div className="hidden lg:flex lg:justify-end lg:flex-1">{cta}</div>
       </nav>
 
       {/* Mobile menu, show/hide based on menu state. */}
@@ -173,7 +152,7 @@ const Header = () => {
         </div>
       </div>
     </header>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header

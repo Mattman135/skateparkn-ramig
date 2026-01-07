@@ -88,6 +88,6 @@ const config = {
     loginUrl: "/api/auth/signin",
     callbackUrl: "/dashboard",
   },
-};
+}
 
-export default config;
+export default config
