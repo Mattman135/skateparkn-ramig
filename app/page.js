@@ -1,5 +1,6 @@
 import fs from "fs/promises"
 import path from "path"
+import { Suspense } from "react"
 import Header from "@/components/Header"
 import Footer from "@/components/Footer"
 import Hero from "@/components/Hero"
@@ -13,7 +14,9 @@ export default async function Home() {
 
   return (
     <main className="p-1 w-full">
-      <Header />
+      <Suspense fallback={<div>Loading header...</div>}>
+        <Header />
+      </Suspense>
       <Hero />
       <CardsSection rawParksData={rawParksData} />
       <FAQ />
