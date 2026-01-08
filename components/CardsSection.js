@@ -3,13 +3,15 @@
 import { useState } from "react"
 import DogparkCard from "@/components/DogparkCard"
 
-const CardsSection = ({ rawParksData }) => {
+const CardsSection = ({ dogparks }) => {
   const [currentPage, setCurrentPage] = useState(1)
   const cardsPerPage = 9
 
+  const dataToDisplay = dogparks.length > 0 ? dogparks : [];
+
   const indexOfLastCard = currentPage * cardsPerPage
   const indexOfFirstCard = indexOfLastCard - cardsPerPage
-  const currentCards = rawParksData.slice(indexOfFirstCard, indexOfLastCard)
+  const currentCards = dataToDisplay.slice(indexOfFirstCard, indexOfLastCard)
 
   const handleNextPage = () => {
     setCurrentPage((prevPage) => prevPage + 1)
@@ -19,7 +21,7 @@ const CardsSection = ({ rawParksData }) => {
     setCurrentPage((prevPage) => prevPage - 1)
   }
 
-  const totalPages = Math.ceil(rawParksData.length / cardsPerPage)
+  const totalPages = Math.ceil(dataToDisplay.length / cardsPerPage)
 
   return (
     <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 p-8 bg-base-200">
@@ -65,7 +67,7 @@ const CardsSection = ({ rawParksData }) => {
           </svg>
         </button>
         <span className="flex items-center text-lg font-semibold">
-          Sida {currentPage} av {totalPages}
+          Sida {dataToDisplay.length === 0 ? 0 : currentPage} av {totalPages}
         </span>
       </div>
     </section>

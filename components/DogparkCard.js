@@ -17,16 +17,12 @@ const DogparkCard = ({ park }) => {
       </figure>
       <div className="card-body">
         <h2 className="card-title">{name} hundrastgård</h2>
-        <p>
-          A card component has a figure, a body part, and inside body there are
-          title and actions parts. Här ska det vara en recension.
-        </p>
         <div className="card-actions justify-end">
           <Link
             href={`/pages/b/${encodeURIComponent(name)}`}
             className="text-blue-600 hover:underline"
           >
-            {name} hundrastgård
+            {address}
           </Link>
         </div>
       </div>
