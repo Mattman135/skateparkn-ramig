@@ -3,7 +3,6 @@
 import Link from "next/link"
 
 const DogparkCard = ({ park }) => {
-  console.log(park)
   const name = park["name"] || "Unknown Dog Park"
   const imageUrl = park["photo"]
   const address = park["adress"]
