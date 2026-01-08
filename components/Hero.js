@@ -60,10 +60,9 @@ const Hero = () => {
             </h1>
           </div>
           <div className="max-w-100">
-            Välkommen till den ultimata hundrastgårdkatalogen! Oavsett om du är
-            en hängiven hundägare som söker ett nytt äventyr eller en
-            hundentusiast som letar efter den perfekta lekplatsen, har du kommit
-            rätt.
+            Välkommen till en svensk hundrastgårdkatalog. Oavsett om du är en
+            hängiven hundägare som söker ett nytt äventyr eller en hundentusiast
+            som letar efter den perfekta lhundrastgården, har du kommit rätt.
           </div>
           <div className="relative w-full max-w-xs">
             <label className="input">
