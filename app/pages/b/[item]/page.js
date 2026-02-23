@@ -86,9 +86,11 @@ export default async function ItemDetailPage(props) {
         {foundItem.latitude && foundItem.longitude && (
           <div className="border border-base-300 rounded-lg overflow-hidden">
             <iframe
-              src={`https://maps.google.com/maps?q=${String(foundItem.latitude).replace(
+              src={`https://maps.google.com/maps?q=${String(
+                foundItem.latitude,
+              ).replace(
                 ",",
-                "."
+                ".",
               )},${String(foundItem.longitude).replace(",", ".")}&z=15&output=embed`}
               width="600"
               height="450"
