@@ -9,15 +9,34 @@ import config from "@/config"
 const faqList = [
   {
     question: `Vad är ${config.appName} och vad kan jag hitta här?`,
-    answer: <p className="space-y-2 leading-relaxed"></p>,
+    answer: (
+      <p className="space-y-2 leading-relaxed">
+        Skatepark Nära Mig är en kurerad katalog där du kan hitta noggrant
+        utvalda skateparker och skateplatser – allt samlat på ett och samma
+        ställe för dig som vill åka skateboard, BMX eller inlines.
+      </p>
+    ),
   },
   {
     question: "Vem är den här katalogen till för?",
-    answer: <p className="space-y-2 leading-relaxed"></p>,
+    answer: (
+      <p className="space-y-2 leading-relaxed">
+        Katalogen är skapad för skateboardåkare, BMX-cyklister och andra som
+        söker efter skateparker i närheten, oavsett om du är nybörjare eller
+        erfaren åkare.
+      </p>
+    ),
   },
   {
     question: `Varför ska jag använda ${config.appName} istället för en vanlig sökmotor?`,
-    answer: <p className="space-y-2 leading-relaxed"></p>,
+    answer: (
+      <p className="space-y-2 leading-relaxed">
+        Till skillnad från en vanlig sökmotor erbjuder Skatepark Nära Mig ett
+        genomtänkt och pålitligt urval, så att du slipper sålla igenom
+        orelevanta resultat och snabbt kan hitta en skatepark som passar din
+        nivå och ditt område.
+      </p>
+    ),
   },
 ]
 
