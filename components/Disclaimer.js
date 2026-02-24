@@ -36,8 +36,8 @@ const Disclaimer = () => {
             </p>
 
             <p className="text-base-content/80">
-              Istället för att lista "allt", lyfts enbart det fram som faktiskt
-              är relevant och intressant för dig, så att du sparar tid.
+              Istället för att lista allt, lyfts enbart det fram som faktiskt är
+              relevant och intressant för dig, så att du sparar tid.
             </p>
           </div>
         </div>
